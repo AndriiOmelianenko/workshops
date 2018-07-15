@@ -1,0 +1,38 @@
+package: github.com/AndriiOmelianenko/workshops/shop/api
+import:
+- package: github.com/gobuffalo/buffalo
+  version: ~0.12.3
+  subpackages:
+  - middleware
+  - middleware/ssl
+  - render
+- package: github.com/gobuffalo/envy
+  version: ~1.6.3
+- package: github.com/gobuffalo/pop
+  version: ~4.6.1
+- package: github.com/gobuffalo/packr
+  version: ~1.11.1
+- package: github.com/gobuffalo/suite
+  version: ~2.1.2
+- package: github.com/gobuffalo/uuid
+  version: ~2.0.0
+- package: github.com/gobuffalo/validate
+  version: ~2.0.0
+  subpackages:
+  - validators
+- package: github.com/gobuffalo/x
+  subpackages:
+  - sessions
+- package: github.com/markbates/grift
+  version: ~1.0.0
+  subpackages:
+  - grift
+- package: github.com/rs/cors
+  version: ~1.4.0
+- package: github.com/unrolled/secure
+- package: github.com/icrowley/fake
+testImport:
+- package: github.com/gobuffalo/packr
+  version: ~1.11.1
+- package: github.com/gobuffalo/suite
+  version: ~2.1.2
