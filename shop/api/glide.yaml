@@ -31,6 +31,7 @@ import:
   version: ~1.4.0
 - package: github.com/unrolled/secure
 - package: github.com/icrowley/fake
+- package: github.com/corpix/uarand
 testImport:
 - package: github.com/gobuffalo/packr
   version: ~1.11.1

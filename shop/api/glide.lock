@@ -1,10 +1,12 @@
-hash: c1d6a9b3e1364d1811321921cca32bede6c29f6b89e453075e297f5cc2fffe40
-updated: 2018-07-15T21:10:15.383355+03:00
+hash: dd003923d50978f08f59a867a1facd97d07c6064bb4b89ff5e581020587d6c81
+updated: 2018-07-15T21:36:28.865517+03:00
 imports:
 - name: github.com/cockroachdb/cockroach-go
   version: 59c0560478b705bf9bd12f9252224a0fad7c87df
   subpackages:
   - crdb
+- name: github.com/corpix/uarand
+  version: 2b8494104d86337cdd41d0a49cbed8e4583c0ab4
 - name: github.com/dustin/go-humanize
   version: 9f541cc9db5d55bce703bd99987c9d5cb8eea45e
 - name: github.com/fatih/color
