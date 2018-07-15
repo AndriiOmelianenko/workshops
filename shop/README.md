@@ -34,7 +34,7 @@ Client zone(/):
 
 * [A simple, fast, and fun package for building command line apps in Go](https://github.com/urfave/cli)
 
-* [go-swagger](github.com/go-swagger/go-swagger)
+* [go-swagger](https://github.com/go-swagger/go-swagger)
 * [example of todo list server](https://goswagger.io/tutorial/todo-list)
 
 * [table tests generator](https://github.com/cweill/gotests)
