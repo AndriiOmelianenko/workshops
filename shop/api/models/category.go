@@ -11,14 +11,14 @@ import (
 )
 
 type Category struct {
-	ID        uuid.UUID `json:"id" db:"id"`
-	CreatedAt time.Time `json:"created_at" db:"created_at"`
-	UpdatedAt time.Time `json:"updated_at" db:"updated_at"`
-	Alias     string    `json:"alias" db:"alias"`
-	Title     string    `json:"title" db:"title"`
-	Desc      string    `json:"desc" db:"desc"`
-	Logo      string    `json:"logo" db:"logo"`
-	ParentID  uuid.UUID `json:"parent_id" db:"parent_id"`
+	ID          uuid.UUID `json:"id" db:"id"`
+	CreatedAt   time.Time `json:"created_at" db:"created_at"`
+	UpdatedAt   time.Time `json:"updated_at" db:"updated_at"`
+	Alias       string    `json:"alias" db:"alias"`
+	Title       string    `json:"title" db:"title"`
+	Description string    `json:"description" db:"description"`
+	Logo        string    `json:"logo" db:"logo"`
+	ParentID    uuid.UUID `json:"parent_id" db:"parent_id"`
 }
 
 // String is not required by pop and may be deleted
@@ -42,7 +42,7 @@ func (c *Category) Validate(tx *pop.Connection) (*validate.Errors, error) {
 	return validate.Validate(
 		&validators.StringIsPresent{Field: c.Alias, Name: "Alias"},
 		&validators.StringIsPresent{Field: c.Title, Name: "Title"},
-		&validators.StringIsPresent{Field: c.Desc, Name: "Desc"},
+		&validators.StringIsPresent{Field: c.Description, Name: "Description"},
 		&validators.StringIsPresent{Field: c.Logo, Name: "Logo"},
 	), nil
 }

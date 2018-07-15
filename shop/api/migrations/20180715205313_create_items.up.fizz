@@ -2,7 +2,7 @@ create_table("items") {
 	t.Column("id", "uuid", {"primary": true})
 	t.Column("alias", "string", {})
 	t.Column("title", "string", {})
-	t.Column("desc", "string", {})
+	t.Column("description", "string", {})
 	t.Column("pictures", "string", {})
 	t.Column("price", "integer", {})
 	t.Column("count", "integer", {})
