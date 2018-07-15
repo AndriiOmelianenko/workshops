@@ -31,3 +31,4 @@ swag/swagger-ui*
 # shop-api files
 shop/api/app
 shop/api/tmp/
+vendor/
