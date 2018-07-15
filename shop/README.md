@@ -88,8 +88,8 @@ Validation: `buffalo routes` or inside container `api`: `./app task routes`
 ### 4. Generate Models
 
 ```
-soda generate model item alias:string title:string desc:string pictures:string price:int count:int category_id:uuid
-soda generate model category alias:string title:string desc:string logo:string parent_id:uuid
+soda generate model item alias:string title:string description:string pictures:string price:int count:int category_id:uuid
+soda generate model category alias:string title:string description:string logo:string parent_id:uuid
 soda generate model order id:int status:string sum:int
 soda generate model ordered id:int order_id:int item_id:uuid item_cnt:int item_sum:int
 ```
