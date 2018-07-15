@@ -5,13 +5,12 @@ import (
 	"time"
 
 	"github.com/gobuffalo/pop"
-	"github.com/gobuffalo/uuid"
 	"github.com/gobuffalo/validate"
 	"github.com/gobuffalo/validate/validators"
 )
 
 type Item struct {
-	ID         uuid.UUID `json:"id" db:"id"`
+	ID         int       `json:"id" db:"id"`
 	CreatedAt  time.Time `json:"created_at" db:"created_at"`
 	UpdatedAt  time.Time `json:"updated_at" db:"updated_at"`
 	Alias      string    `json:"alias" db:"alias"`
@@ -20,7 +19,7 @@ type Item struct {
 	Pictures   string    `json:"pictures" db:"pictures"`
 	Price      int       `json:"price" db:"price"`
 	Count      int       `json:"count" db:"count"`
-	CategoryID uuid.UUID `json:"category_id" db:"category_id"`
+	CategoryID int       `json:"category_id" db:"category_id"`
 }
 
 // String is not required by pop and may be deleted
@@ -42,12 +41,14 @@ func (i Items) String() string {
 // This method is not required and may be deleted.
 func (i *Item) Validate(tx *pop.Connection) (*validate.Errors, error) {
 	return validate.Validate(
+		&validators.IntIsPresent{Field: i.ID, Name: "ID"},
 		&validators.StringIsPresent{Field: i.Alias, Name: "Alias"},
 		&validators.StringIsPresent{Field: i.Title, Name: "Title"},
 		&validators.StringIsPresent{Field: i.Desc, Name: "Desc"},
 		&validators.StringIsPresent{Field: i.Pictures, Name: "Pictures"},
 		&validators.IntIsPresent{Field: i.Price, Name: "Price"},
 		&validators.IntIsPresent{Field: i.Count, Name: "Count"},
+		&validators.IntIsPresent{Field: i.CategoryID, Name: "CategoryID"},
 	), nil
 }
 
