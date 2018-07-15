@@ -47,6 +47,12 @@ func App() *buffalo.App {
 
 		app.GET("/", HomeHandler)
 
+		app.GET("/items/list", ItemsList)
+		app.GET("/items/index", ItemsIndex)
+		app.GET("/categories/list", CategoriesList)
+		app.GET("/categories/index", CategoriesIndex)
+		app.POST("/orders/create", OrdersCreate)
+		app.PUT("/orders/update", OrdersUpdate)
 	}
 
 	return app
