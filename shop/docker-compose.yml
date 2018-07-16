@@ -13,8 +13,8 @@ services:
     image: shop-api
     ports:
       - "8080:3000"
-    mem_limit: 50Mb
-    memswap_limit: 50Mb
+    mem_limit: 150Mb
+    memswap_limit: 150Mb
     links:
       - db
     depends_on:
