@@ -52,7 +52,7 @@ func App() *buffalo.App {
 		app.GET("/categories/list", CategoriesList)
 		app.GET("/categories/{category}", CategoriesIndex)
 		app.POST("/orders/create", OrdersCreate)
-		app.PUT("/orders/update", OrdersUpdate)
+		app.PUT("/orders/{order}/item", OrdersUpdate)
 	}
 
 	return app
