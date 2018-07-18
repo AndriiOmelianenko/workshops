@@ -7,6 +7,7 @@ import (
 )
 
 // CategoriesList default implementation.
+// curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/categories/list
 func CategoriesList(c buffalo.Context) error {
 	categories := models.Categories{}
 	err := models.DB.All(&categories)
@@ -18,6 +19,7 @@ func CategoriesList(c buffalo.Context) error {
 }
 
 // CategoriesIndex default implementation.
+// curl -X GET -H "Content-Type: application/json" http://127.0.0.1:8080/categories/<category ID>
 func CategoriesIndex(c buffalo.Context) error {
 	category := models.Category{}
 	err := models.DB.Find(&category, c.Param("category"))

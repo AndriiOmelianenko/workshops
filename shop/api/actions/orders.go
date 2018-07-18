@@ -23,7 +23,7 @@ func OrdersCreate(c buffalo.Context) error {
 	return c.Render(200, r.String("Order created: %v", order))
 }
 
-// curl -X PUT -H "Content-Type: application/json" http://127.0.0.1:8080/orders/3/item -d '{"item_id": "fa0f13d1-af55-4823-8f85-7e3284316b70", "item_cnt": 5, "item_sum":150}'
+// curl -X PUT -H "Content-Type: application/json" http://127.0.0.1:8080/orders/3/item -d '{"item_id": "fa0f13d1-af55-4823-8f85-7e3284316b70", "item_cnt": 5}'
 // OrdersUpdate default implementation.
 func OrdersUpdate(c buffalo.Context) error {
 	decoder := json.NewDecoder(c.Request().Body)
@@ -37,6 +37,15 @@ func OrdersUpdate(c buffalo.Context) error {
 		return c.Render(404, r.String("ERROR: converting orderID to int: %v", err))
 	}
 	ordered.OrderID = orderID
+
+	// get item price and calculate ordered price based on item_price * item_count
+	item := models.Item{}
+	err = models.DB.Find(&item, ordered.ItemID)
+	if err != nil {
+		return c.Render(404, r.String("ERROR: cant find item in database: %v", err))
+	}
+	ordered.ItemSum = ordered.ItemCnt * item.Price
+
 	err = models.DB.Create(&ordered)
 	if err != nil {
 		return c.Render(404, r.String("ERROR: creating ordered record: %v", err))
