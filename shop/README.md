@@ -1,5 +1,8 @@
 # Shop API
 
+**DEPRICATED in favor of https://github.com/AndriiOmelianenko/shop-api**
+
+
 Let's create API for some common online shop:
 
 ## DB entity
